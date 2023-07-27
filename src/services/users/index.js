@@ -1,10 +1,8 @@
-import _ from 'lodash';
-
 import User from '../../db/model/User';
 
 class UserService {
   static async findByEmail(email) {
-    return User.query().findOne({ email: _.toLower(email) });
+    return User.query().findOne({ email: email.toLowerCase() });
   }
 
   static async getAccountInfoById(id) {

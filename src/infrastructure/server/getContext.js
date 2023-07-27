@@ -1,11 +1,9 @@
 import { getDataFromToken } from '../../shared/authentication';
 
-const getContext = async ({ token }) => {
-  const { tokenData, user: me } = await getDataFromToken(token);
+export default async function getContext({ token }) {
+  const { tokenData, user: currentUser } = await getDataFromToken(token);
   return {
-    me,
+    currentUser,
     tokenData,
   };
-};
-
-export default getContext;
+}

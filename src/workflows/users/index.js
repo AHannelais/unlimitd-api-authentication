@@ -4,7 +4,7 @@ import bcrypt from 'bcrypt';
 import UserService from '../../services/users';
 import { createToken } from '../../utils/jwt';
 
-class UserWorkflow {
+export default class UserWorkflow {
   static async login({ email, password }) {
     const user = await UserService.findByEmail(email);
     if (!user) {
@@ -29,6 +29,7 @@ class UserWorkflow {
 
   static async getAccountInfoById(id) {
     const user = await UserService.getAccountInfoById(id);
+
     if (!user) return null;
     return {
       ...user,
@@ -37,5 +38,3 @@ class UserWorkflow {
     };
   }
 }
-
-export default UserWorkflow;

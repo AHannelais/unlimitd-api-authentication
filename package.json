@@ -59,8 +59,7 @@
     }
   },
   "lint-staged": {
-    "*.{js}": "eslint --cache --fix --max-warnings=0",
-    "*": "cspell src/index.js"
+    "*.{js}": "eslint --cache --fix --max-warnings=0"
   },
   "importSort": {
     ".js, .jsx, .ts, .tsx": {

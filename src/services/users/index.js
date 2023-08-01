@@ -8,6 +8,10 @@ class UserService {
   static async getAccountInfoById(id) {
     return User.query().findById(id);
   }
+
+  static async getUsersList() {
+    return User.query();
+  }
 }
 
 export default UserService;

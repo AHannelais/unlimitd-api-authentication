@@ -37,4 +37,17 @@ export default class UserWorkflow {
       password: undefined,
     };
   }
+
+  static async getUsersList() {
+    const users = await UserService.getUsersList();
+
+    if (!users) return null;
+    return users
+      .filter((user) => user.role !== 'ADMIN')
+      .map((user) => ({
+        ...user,
+        // This is to prevent the password from being sent to the client
+        password: undefined,
+      }));
+  }
 }

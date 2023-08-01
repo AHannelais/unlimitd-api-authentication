@@ -1,5 +1,6 @@
 type Query {
   currentUser: User!
+  usersList: [User!]!
 }
 
 type Mutation {
